@@ -2,9 +2,7 @@ var http = require('http')
 var fs = require('fs')
 var url = require('url')
 
-
-
-http.createServer(function(req, res){
+var server=http.createServer(function(req, res){
 
   var pathObj = url.parse(req.url, true)
   console.log(pathObj)
@@ -26,10 +24,10 @@ http.createServer(function(req, res){
       res.end(JSON.stringify(ret))
       break;
     case '/user/123':
-
       res.end( fs.readFileSync(__dirname + '/static/user'))
       break;
     default:
       res.end( fs.readFileSync(__dirname + '/static' + pathObj.pathname) )
   }
-}).listen(8080)
+})
+server.listen(8080)
