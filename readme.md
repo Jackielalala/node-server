@@ -1,5 +1,4 @@
 # 实现一个静态服务器
----
 1. 首先创建http,fs,url模块
 2. 创建服务器
 3. 将url解析为对象赋给pathObj，true指pathname仅为文件名，而false为默认指pathname为域名加文件名
