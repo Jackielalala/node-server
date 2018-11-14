@@ -21,7 +21,7 @@ var server=http.createServer(function(req, res){
           weather: '不知道'
         }
       }
-      res.end(JSON.stringify(ret))
+      res.end(JSON.stringify(ret))/*返回值必须得是字符串，不然会报错*/
       break;
     case '/user/123':
       res.end( fs.readFileSync(__dirname + '/static/user'))
